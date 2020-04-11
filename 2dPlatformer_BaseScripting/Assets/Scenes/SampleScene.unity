@@ -834,7 +834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c284b8334875140bb6d3357bcf51ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 2127453414}
 --- !u!1 &682378836
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,7 +6902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _JumpForce: 30
+  _jumpForce: 30
   _pointSupport: {fileID: 682378837}
   _ground:
     serializedVersion: 2

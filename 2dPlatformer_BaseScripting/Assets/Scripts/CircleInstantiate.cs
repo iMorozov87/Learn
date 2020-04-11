@@ -14,8 +14,8 @@ public class CircleInstantiate : MonoBehaviour
         for (int i = 0; i < _countGem; i++)
         {
             Gem newGem = Instantiate(_gemTemplate, new Vector3(0, 0, 0), Quaternion.identity);
-            newGem.transform.position = new Vector3(_radius * Mathf.Cos(angelStep * (i+1)*Mathf.Deg2Rad)+
-                transform.position.x, _radius * Mathf.Sin(angelStep * (i+1)*Mathf.Deg2Rad)+transform.position.y, 0);
+            newGem.transform.position = new Vector3(_radius * Mathf.Cos(angelStep * (i+1) * Mathf.Deg2Rad)+
+                transform.position.x, _radius * Mathf.Sin(angelStep * (i+1) * Mathf.Deg2Rad) + transform.position.y, 0);
         }       
     }
 }

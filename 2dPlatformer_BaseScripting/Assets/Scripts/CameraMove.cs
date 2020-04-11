@@ -14,7 +14,7 @@ public class CameraMove : MonoBehaviour
         if (_target != null)
         {
             _targetPosition = new Vector3(_target.transform.position.x, _target.transform.position.y + _verticalCoefficient, -10);
-            transform.position = Vector3.Lerp(transform.position, _targetPosition, _speed*Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, _targetPosition, _speed * Time.deltaTime);
         }        
     }
 }

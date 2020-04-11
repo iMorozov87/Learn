@@ -65,11 +65,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\CircleInstantiate.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyPointMove.cs" />
     <Compile Include="Assets\Scripts\Gem.cs" />
+    <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovements.cs" />
-    <Compile Include="Assets\Scripts\damageEnemy.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/ProgramNews/Unity_project/2dPlatformer_BaseScripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

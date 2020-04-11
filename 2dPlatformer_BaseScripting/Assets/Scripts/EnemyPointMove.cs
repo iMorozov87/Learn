@@ -10,6 +10,7 @@ public class EnemyPointMove : MonoBehaviour
     private Transform[] _points;
     private int _currentPoint = 0;
     private bool directionRigth = false;
+
     private void Start()
     {
         _points = new Transform[_path.childCount];
@@ -18,6 +19,7 @@ public class EnemyPointMove : MonoBehaviour
             _points[i] = _path.GetChild(i);
         }
     }
+
     private void Update()
     {
         Transform target = _points[_currentPoint];
@@ -32,6 +34,7 @@ public class EnemyPointMove : MonoBehaviour
             }
         }
     }
+
     private void Flip()
     {
         directionRigth = !directionRigth;
