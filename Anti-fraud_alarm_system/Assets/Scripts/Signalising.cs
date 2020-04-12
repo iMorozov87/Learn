@@ -28,7 +28,7 @@ public class Signalising : MonoBehaviour
         }
         _audioSource.Play();
         _targetVolume = 1;
-        _coroutine = StartCoroutine(VolumeControl(_deltaVolume));
+        _coroutine = StartCoroutine(SmoothVolumeChange(_deltaVolume));
         _soundPlay = true;
     }
 
@@ -39,11 +39,11 @@ public class Signalising : MonoBehaviour
             StopCoroutine(_coroutine);
         }
         _targetVolume = 0;
-        _coroutine = StartCoroutine(VolumeControl(_deltaVolume *-1));
+        _coroutine = StartCoroutine(SmoothVolumeChange(_deltaVolume *-1));
         _soundPlay = true;
     }
 
-     private IEnumerator VolumeControl(float deltaVolume)
+     private IEnumerator SmoothVolumeChange(float deltaVolume)
      {       
             while (_audioSource.volume != _targetVolume)
             {
@@ -54,8 +54,3 @@ public class Signalising : MonoBehaviour
             _soundPlay = false;
      }
 }
-
-
-
-
-
