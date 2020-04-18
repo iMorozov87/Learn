@@ -19,22 +19,28 @@ public class HealthBar : MonoBehaviour
 
     public void HealthChange(float deltaHealth)
     {
-        if (_targetHealth + deltaHealth >= 0 && _targetHealth + deltaHealth <= 100)
+        int minHealth = 0;
+        int maxHealth = 100;
+
+        _targetHealth = Mathf.Clamp(_targetHealth + deltaHealth, minHealth, maxHealth);
+        Debug.Log(_targetHealth);
+        if (_smoothChangeIsOn)
         {
-            _targetHealth += +deltaHealth;
-            if (_smoothChangeIsOn)
-            {
-                StopCoroutine(_smoothChangeofHealth);
-            }
-            _smoothChangeIsOn = true;
-            _smoothChangeofHealth = StartCoroutine(SmoothChangeHealth(deltaHealth));
+            StopCoroutine(_smoothChangeofHealth);
         }
+        _smoothChangeIsOn = true;
+        _smoothChangeofHealth = StartCoroutine(SmoothChangeHealth(deltaHealth));
     }
 
     private IEnumerator SmoothChangeHealth(float deltaHealth)
     {
-        float timeout = 0.1F;        
-        float normalizedSpeedChange = Mathf.Abs(1- (_currentHealth.value/_targetHealth));
+        float timeout = 0.05F;
+        float normalizedSpeedChange=0.1F;
+
+        if (_targetHealth != 0)
+        {
+            normalizedSpeedChange = Mathf.Abs(1 - (_currentHealth.value / _targetHealth));
+        }
         var waitForSecond = new WaitForSeconds(timeout);
 
         while (_smoothChangeIsOn)
